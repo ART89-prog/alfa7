@@ -31,10 +31,16 @@
                             </div>
                             <span>г. Волгоград, ул. Ленина, 43</span>
                         </div> 
-                        <form>
-                            <div class="line">
+                        <form class="validate_form">
+                           <div class="line validate">
                                 <div class="field">
-                                    <input type="tel" placeholder="+7(931)315-43-35">
+                                    <input type="tel" name="phone" class="required" placeholder="+7(931)315-43-35">
+                                    <div class="error-text hide">
+                                        <div class="icon">
+                                            <img src="images/error.svg" alt="">
+                                        </div>
+                                        <span>Неверный номер</span> 
+                                    </div> 
                                 </div>                            
                             </div>
                             <div class="line">
@@ -45,6 +51,15 @@
                                 </div>                            
                             </div>
                         </form> 
+                        <div class="application-accepted hide">
+                            <div class="icon">
+                                <img src="images/check.svg" alt="">
+                            </div>
+                            <div class="application-accepted_desc">
+                                <div class="title">Ваша заявка принята!</div>
+                                <div class="text">Наш менеджер свяжется с вами в ближайшее время</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

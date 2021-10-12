@@ -277,7 +277,10 @@ header {
     color: #d02c2c;
     font-size: 14px;
     font-weight: 500;
-    display: flex;
+    display: flex;    
+}
+.promo form .field  .error-text.hide{
+    display: none;
 }
 .promo form .line-error .field .error-text .icon {
     margin-right: 7px;
@@ -288,6 +291,10 @@ header {
     align-items: center;
     margin-top: 58px;
     margin-bottom: 40px;
+
+}
+.application-accepted.hide{
+    display: none;
 }
 .application-accepted .icon {
     margin-right: 15px; 
