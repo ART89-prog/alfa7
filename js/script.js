@@ -17,8 +17,35 @@ $(document).ready(function(){
 		}
 	})
 
+	$(document).on('keypress', '.error', function() {
+		$(this).removeClass("error");
+        $(".validate").removeClass("line-error")
+        $(".error-text").addClass("hide");
+    })
+
 
 	// Маска ввода
 	$('input[type=tel]').inputmask('+7 (999) 999-99-99')
+
+	$('.validate_form button').on('click', function(event){
+        event.preventDefault();      
+        
+        $(this).closest('form').find('input:not([type=submit]),textarea').each(function(i, elem) {            
+            if($(this).attr('name') == 'phone' && $(this).hasClass('required')) {
+                if (!$(this).inputmask("isComplete"))
+                {
+                	$(this).addClass("error");
+                    $(".validate").addClass("line-error")
+                    $(".error-text").removeClass("hide");
+                }
+                else
+                {
+                	$(".validate_form").hide();
+                	$('.application-accepted').removeClass("hide");
+                }
+            } 
+        })   
+    });
+
 
 });
