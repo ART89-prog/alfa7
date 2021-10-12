@@ -17,12 +17,10 @@ $(document).ready(function(){
 		}
 	})
 
-	$(document).on('change', '.error', function() {
-        $(this).removeClass('error');
-        if($(this).attr("name")!="agree")
-        {
-        	$(this).next().hide();
-        }
+	$(document).on('keypress', '.error', function() {
+		$(this).removeClass("error");
+        $(".validate").removeClass("line-error")
+        $(".error-text").addClass("hide");
     })
 
 
@@ -36,6 +34,7 @@ $(document).ready(function(){
             if($(this).attr('name') == 'phone' && $(this).hasClass('required')) {
                 if (!$(this).inputmask("isComplete"))
                 {
+                	$(this).addClass("error");
                     $(".validate").addClass("line-error")
                     $(".error-text").removeClass("hide");
                 }
